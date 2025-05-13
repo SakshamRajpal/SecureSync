@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap'); 
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2aabf6;
+  border-radius: 6px;
+  border: 2px solid #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3bb7ff;
+}
+
+/* Firefox scrollbar customization */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2aabf6 #e2e8f0;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #2aabf6;
+}
+
+/* Body and basic styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #000000;
+  padding: 15px 0;
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-bottom: 10px solid #15A8DE; /* Blue border as shown in the image */
+  width: 100%; /* Ensure header stretches full width */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  width: 100%; /* Ensure nav stretches full width */
+  max-width: 1200px; /* Center content with max-width */
+  margin: 0 auto; /* Center the nav */
+}
+
+.logo {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+}
+
+.logo span.secure {
+    color: #15A8DE; /* "Secure" in blue */
+}
+
+.logo span.sync {
+    color: white; /* "Sync" in white */
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #2aabf6;
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger menu toggle animation */
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Sidebar for small screens */
+.show-menu {
+  display: flex !important; /* Ensure nav-links are shown when toggled */
+}
+
+/* Responsive styling */
+@media all and (max-width: 761px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background-color: #000000; /* Match header background */
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle divider */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+    color: white;
+  }
+
+  .nav-links a:hover {
+    color: #2aabf6;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle hover effect */
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .logo {
+    align-self: flex-start;
+    margin-left: 20px;
+  }
+}
+
+/* Ensure the map container doesn't overlap */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #f4f8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5rem; /* Add padding to ensure space for controls */
+}
+
+/* Map Styles */
+#map {
+  width: 90%;
+  height: 70%; /* Reduced height slightly to make room for controls */
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 2px 2px #333;
+  margin-top: -7rem;
+}
+
+/* Search Box Styles */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1vw;
+  background-color: #e6f0fa;
+}
+
+.search-box input {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  width: 250px;
+  font-size: 14px;
+  border: 1px dotted rgba(0, 0, 0, 0.855);
+}
+
+.search-box button {
+  padding: 10px 15px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-box button i {
+  scale: 1.4;
+}
+
+.search-box button i:hover {
+  text-shadow: 2px 2px 2px #2aabf6(239, 10, 10);
+}
+.search-box button:hover {
+  background-color: #2aabf6;
+}
+
+.search-box #streetview:active {
+  background-color: #2aabf6;
+  border: 1px solid #2aabf6;
+}
+
+/* Map Controls */
+.controls {
+  position: absolute;
+  transform: translateX(-50%); /* Center horizontally by shifting left 50% of its own width */
+  left: 50%; /* Position the left edge at 50% of the parent width */
+  top: 82%; /* Adjust vertically to place below the map (based on map height of 70%) */
+  display: flex;
+  gap: 10px;
+  z-index: 1000; /* Ensure controls are above the map */
+  justify-content: center; /* Ensure children are centered within the flex container */
+}
+
+.controls button {
+  padding: 10px 15px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.controls button:hover {
+  background-color: #2aabf6;
+  color: black;
+}
+
+.controls button:focus {
+  background-color: #f1ed12aa;
+  border: 1px solid #2aabf6(255, 0, 0);
+  color: black;
+}
+
+.controls label {
+  color: #000000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.controls input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.5);
+}
+
+/* Advantages Section Styling */
+.advantages-section {
+  padding: 50px;
+  background-color: #f5f7fa;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.advantages-section h2 {
+  font-size: 36px;
+  color: #000000;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.advantages-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantage-box {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantage-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.advantage-box h3 {
+  font-size: 24px;
+  color: #2aabf6;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.advantage-box p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .advantages-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Section Styling */
+.footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 50px 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Footer Logo and Description */
+.footer-logo h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #2aabf6
+}
+
+.footer-logo p {
+    font-size: 14px;
+    color: #ccc;
+    max-width: 300px;
+    line-height: 1.6;
+}
+
+/* Footer Links Section */
+.footer-links h3 {
+    font-size: 18px;
+    color: #2aabf6;
+    margin-bottom: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #2aabf6;
+}
+
+/* Footer Social Media Section */
+.footer-social h3 {
+    font-size: 18px;
+    color: #2aabf6;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    color: #ccc;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #2aabf6;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #000000;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .controls {
+    transform: translateX(-50%); /* Keep centering on mobile */
+    left: 50%;
+    top: 70%; /* Adjust for smaller map height on mobile */
+    flex-direction: column; /* Stack controls vertically on mobile */
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .map-container {
+    padding-bottom: 10rem; /* Keep padding for mobile */
+  }
+
+  #map {
+    height: 60%; /* Keep reduced map height on mobile */
+  }
+}

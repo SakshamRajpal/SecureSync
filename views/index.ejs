@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🛡️SecureSync</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heatmap.js@2.0.5/heatmap.min.js"></script>
+    <script src="https://unpkg.com/leaflet-heatmap/leaflet-heatmap.min.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+            <span class="secure">🛡️Secure</span><span class="sync">Sync</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/html/about.html">About</a></li>
+                <li><a href="/#why-us" id="why-us-link">Why Us</a></li>
+                <li><a href="/html/privacy.html">Privacy Policy</a></li>
+                <li><a href="/html/contact.html" id="contact-link">Contact</a></li>
+                <li><a href="/html/login.html">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="location-input" placeholder="Search for a location" />
+        <button onclick="searchLocation()">
+            <i class="bx bx-search-alt bx-tada"></i>
+        </button>
+    </div>
+
+    <!-- Map Section -->
+    <section class="map-container">
+        <div id="map"></div>
+        <div class="controls">
+            <button onclick="setStreetView()" id="setStreetView">Street View</button>
+            <button onclick="setSatelliteView()" id="setSatelliteView">Satellite View</button>
+            <label for="real-time-toggle">Real-Time Tracking:</label>
+            <input type="checkbox" id="real-time-toggle" checked>
+            <label>
+                <input type="range" id="radius-slider" min="1" max="50" value="25" />
+            </label>
+            <label>
+                <input type="range" id="opacity-slider" min="0.1" max="1" step="0.1" value="0.8" />
+            </label>
+        </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section class="advantages-section" id="why-us">
+        <h2>Why use 🛡️SecureSync for Real-Time Tracking?</h2>
+        <div class="advantages-container">
+            <div class="advantage-box">
+                <h3>1. Real-Time Location</h3>
+                <p>Get up-to-date location information on your assets, vehicles, or people with live updates to ensure efficient management.</p>
+            </div>
+            <div class="advantage-box">
+                <h3>2. Improved Efficiency</h3>
+                <p>Optimize your routes and reduce delays with real-time tracking, enhancing productivity and saving time.</p>
+            </div>
+            <div class="advantage-box">
+                <h3>3. Enhanced Security</h3>
+                <p>Monitor movements in real-time to ensure safety, security, and immediate response in case of any unforeseen situations.</p>
+            </div>
+            <div class="advantage-box">
+                <h3>4. Better Decision-Making</h3>
+                <p>Use the data from real-time tracking to make informed decisions, whether it's for logistics, safety, or personal use.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>SecureSync</h2>
+                <p>Your trusted solution for real-time tracking and location services.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="/html/about.html">About</a></li>
+                    <li><a href="/html/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/html/contact.html">Contact</a></li>
+                    <li><a href="/html/login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class='fab fa-instagram' style='color:#b92169'></i></a>
+                    <a href="#"><i class='fab fa-youtube' style='color:#ff0000'></i></a>
+                    <a href="#"><i class='fab fa-facebook' style='color:#1877f2'></i></a>
+                    <a href="#"><i class='fab fa-twitter' style='color:#1da1f2'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SecureSync. Made by Saksham with ❤️. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+     <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/map.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('show-menu');
+        });
+    </script>
+</body>
+</html>

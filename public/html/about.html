@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - SecureSync</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <!-- Added Font Awesome CDN for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="secure">🛡️Secure</span><span class="sync">Sync</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/html/about.html">About</a></li>
+                <li><a href="/#why-us" id="why-us-link">Why Us</a></li>
+                <li><a href="/html/privacy.html">Privacy Policy</a></li>
+                <li><a href="/html/contact.html" id="contact-link">Contact</a></li>
+                <li><a href="/html/login.html">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>About SecureSync:</h2>
+        <p>Welcome to SecureSync, your trusted solution for real-time tracking and location services. We are dedicated to helping you stay connected and informed by providing accurate and secure tracking tools.</p>
+        
+        <h2>About the Creator:</h2>
+        <p>Hi, I’m <b>Saksham Rajpal</b>, the creator of SecureSync. I’m a passionate full stack developer with a mission to build technology that makes life easier and safer. I started SecureSync in 2025 to address the need for reliable real-time tracking, whether for personal safety, fleet management, or asset monitoring. With a focus on privacy and user experience, I aim to empower users with tools they can trust.</p>
+        
+        <h2>Our Mission:</h2>
+        <p>At SecureSync, our mission is to provide seamless, secure, and ethical tracking solutions. We believe in transparency, which is why we prioritize user consent and data protection in everything we do.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>SecureSync</h2>
+                <p>Your trusted solution for real-time tracking and location services.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/html/about.html">About</a></li>
+                    <li><a href="/html/privacy.html">Privacy Policy</a></li>
+                    <li><a href="/html/contact.html">Contact</a></li>
+                    <li><a href="/html/login.html">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class='fab fa-instagram' style='color:#b92169'></i></a>
+                    <a href="#"><i class='fab fa-youtube' style='color:#ff0000'></i></a>
+                    <a href="#"><i class='fab fa-facebook' style='color:#1877f2'></i></a>
+                    <a href="#"><i class='fab fa-twitter' style='color:#1da1f2'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 SecureSync. Made by Saksham with ❤️. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check if Font Awesome loaded
+        window.addEventListener('load', () => {
+            const shieldIcon = document.querySelector('.logo i');
+            if (typeof window.FontAwesome === 'object') {
+                shieldIcon.classList.add('loaded');
+            }
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('show-menu');
+        });
+    </script>
+</body>
+</html>
