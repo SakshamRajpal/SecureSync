@@ -8,7 +8,12 @@ const cors = require("cors");
 
 const socketio = require("socket.io");
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server, {
+  cors: {
+    origin: "*", // Allow all origins for simplicity; adjust as needed for production
+    methods: ["GET", "POST"],
+  },
+});
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'));
@@ -26,16 +31,15 @@ io.on("connection", function (socket) {
 });
 
 app.get('/', (req, res) => {
-    res.render('index', { port: process.env.PORT || 3000 });
+  res.render('index', { port: process.env.PORT || 3000 });
 });
 
 app.get('/privacy', (req, res) => {
-    res.render('privacy', { port: process.env.PORT || 3000 });
+  res.render('privacy', { port: process.env.PORT || 3000 });
 });
 
-// Add opt-out route
 app.get('/opt-out', (req, res) => {
-    res.render('opt-out'); // Create views/opt-out.ejs or send a response
+  res.render('opt-out');
 });
 
 const PORT = process.env.PORT || 3000;
